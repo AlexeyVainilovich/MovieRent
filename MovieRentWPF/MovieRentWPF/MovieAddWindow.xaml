@@ -1,0 +1,45 @@
+﻿<Window x:Class="MovieRentWPF.MovieAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieRentWPF"
+        mc:Ignorable="d"
+        Title="MovieAddWindow" Height="400" Width="650">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="15*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="167*" />
+            <ColumnDefinition Width="375*" />
+            <ColumnDefinition Width="100*" />
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label" Content="Добавить фильм" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"  Grid.Row="1" Grid.RowSpan="2" FontSize="14"  />
+        <Label x:Name="label1" Content="Название" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="2" FontSize="12" VerticalAlignment="Center"/>
+        <Label x:Name="label2" Content="Постер" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="3" FontSize="12" VerticalAlignment="Center"/>
+        <Label x:Name="label3" Content="Жанр" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="4" FontSize="12" VerticalAlignment="Center"/>
+        <Label x:Name="label4" Content="Возраст. огр." Grid.Column="0" HorizontalAlignment="Center" Grid.Row="5" FontSize="12" VerticalAlignment="Center"/>
+        <Label x:Name="label5" Content="Актеры" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="6" FontSize="12" VerticalAlignment="Center"/>
+        <Label x:Name="label6" Content="Режиссер" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="7" FontSize="12" VerticalAlignment="Center"/>
+        <Label x:Name="label7" Content="Год выпуска" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="8" FontSize="12" VerticalAlignment="Center"/>
+        <TextBox x:Name="nameTextBox" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center"/>
+        <TextBox x:Name="posterTextBox" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center"/>
+        <TextBox x:Name="genreTextBox" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center"/>
+        <TextBox x:Name="ageTextBox" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center"/>
+        <TextBox x:Name="actorsTextBox" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" FontSize="11" VerticalAlignment="Center"/>
+        <TextBox x:Name="producerTextBox" Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center"/>
+        <TextBox x:Name="dateTextBox" Grid.Column="1" Grid.Row="8" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center"/>
+        <Button x:Name="button" Content="Добавить" Grid.Column="0" HorizontalAlignment="Center"  Grid.Row="9" Grid.ColumnSpan="3" FontSize="12" VerticalAlignment="Center" />
+    </Grid>
+</Window>
