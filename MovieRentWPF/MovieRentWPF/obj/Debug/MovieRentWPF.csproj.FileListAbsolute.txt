@@ -34,3 +34,39 @@ C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\ob
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\ActorAddWindow.baml
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\MovieAddWindow.baml
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\ProducerAddWindow.baml
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\bin\Debug\MovieRentWPF.exe.config
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieRentWPF.exe
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieRentWPF.pdb
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\bin\Debug\MovieRentWPF.exe
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\bin\Debug\MovieRentWPF.pdb
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieRentWPF.csprojResolveAssemblyReference.cache
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MainWindow.baml
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\ActorAddWindow.g.cs
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\ActorsListWindow.g.cs
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\ActorWindow.g.cs
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\FindWindow.g.cs
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MainWindow.g.cs
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieAddWindow.g.cs
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MoviesListWindow.g.cs
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieWindow.g.cs
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\ProducerAddWindow.g.cs
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\ProducersListWindow.g.cs
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\ProducerWindow.g.cs
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\SettingsWindow.g.cs
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\App.g.cs
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieRentWPF_MarkupCompile.cache
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieRentWPF_MarkupCompile.lref
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\ActorAddWindow.baml
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\ActorsListWindow.baml
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\ActorWindow.baml
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\FindWindow.baml
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieAddWindow.baml
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MoviesListWindow.baml
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieWindow.baml
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\ProducerAddWindow.baml
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\ProducersListWindow.baml
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\ProducerWindow.baml
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\SettingsWindow.baml
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieRentWPF.g.resources
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieRentWPF.Properties.Resources.resources
+C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieRentWPF.csproj.GenerateResource.Cache

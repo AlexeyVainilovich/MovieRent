@@ -23,12 +23,15 @@ Background="White">
             <RowDefinition Height="30*"/>
             <RowDefinition Height="30*"/>
             <RowDefinition Height="30*"/>
-            <RowDefinition Height="200*"/>
+            <RowDefinition Height="195*"/>
+            <RowDefinition Height="5*"/>
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="15*" />
-            <ColumnDefinition Width="260*" />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="250*" />
+            <ColumnDefinition Width="5*" />
             <ColumnDefinition Width="15*" />
             <ColumnDefinition Width="5*" />
             <ColumnDefinition Width="200*" />
@@ -36,27 +39,28 @@ Background="White">
             <ColumnDefinition Width="260*" />
             <ColumnDefinition Width="15*" />
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="1"  Grid.Row="1" Grid.ColumnSpan="6" Background="Gray"/>
-        <Grid Grid.Column="2"  Grid.Row="2" Grid.ColumnSpan="5" Grid.RowSpan="3" Background="LightGray"/>
-        <Grid Grid.ColumnSpan="4" Grid.Column="3" Grid.Row="6" Grid.RowSpan="9" Background="LightGray" />
-        <Button x:Name="MainMenuButton" Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Click="MainMenuButton_Click" ></Button>
-        <Label x:Name="label2" Content="Список фильмов" Grid.Column="2"  Grid.ColumnSpan="6" HorizontalAlignment="Center"  Grid.Row="1"  />
-        <ListBox x:Name="listBox" Grid.Column="1" Grid.Row="6" Grid.RowSpan="9"/>
-        <Image x:Name="image" Grid.Column="4" Grid.Row="7" Grid.RowSpan="7"/>
-        <Label x:Name="label" Content="Жанры:" Grid.Column="5" Grid.Row="8" HorizontalAlignment="Right" FontSize="12" />
-        <Label x:Name="labe2" Content="В/о:" Grid.Column="5" Grid.Row="9" HorizontalAlignment="Right" FontSize="12" />
-        <Label x:Name="labe3" Content="Год выпуска:" Grid.Column="5" Grid.Row="10" HorizontalAlignment="Right" FontSize="12"/>
-        <Label x:Name="labe4" Content="Режиссер:" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Right" FontSize="12" />
-        <Label x:Name="labe5" Content="Актеры:" Grid.Column="5" Grid.RowSpan="2" Grid.Row="12" HorizontalAlignment="Right" FontSize="12" />
-        <TextBlock x:Name="nameTextBlock" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="7" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock x:Name="ganreTextBlock" Grid.Column="6" Grid.Row="8" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <TextBlock x:Name="ageTextBlock" Grid.Column="6" Grid.Row="9" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <TextBlock x:Name="dateTextBlock" Grid.Column="6" Grid.Row="10" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <TextBlock x:Name="producerTextBlock" Grid.Column="6" Grid.Row="11" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <TextBlock x:Name="actorsTextBlock" Grid.Column="6" Grid.Row="12" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left"/>
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="4" Grid.Row="7" Grid.RowSpan="7"/>
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="4" Grid.Row="7" Grid.RowSpan="7"/>
-
+        <Grid Grid.Column="1"  Grid.Row="1" Grid.ColumnSpan="8" Background="Gray"/>
+        <Grid Grid.Column="2"  Grid.Row="2" Grid.ColumnSpan="7" Grid.RowSpan="3" Background="LightGray"/>
+        <Grid Grid.Column="1"  Grid.Row="6" Grid.ColumnSpan="3" Grid.RowSpan="10" Background="LightGray"/>
+        <Grid Grid.ColumnSpan="4" Grid.Column="5" Grid.Row="6" Grid.RowSpan="9" Background="LightGray" />
+        <Button x:Name="MainMenuButton" Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="3" Click="MainMenuButton_Click" ></Button>
+        <Label x:Name="label2" Content="Список фильмов" Grid.Column="3"  Grid.ColumnSpan="6" HorizontalAlignment="Center"  Grid.Row="1"  />
+        <ListBox x:Name="listBox" Grid.Column="2" Grid.Row="7" Grid.RowSpan="8"/>
+        <Image x:Name="image" Grid.Column="6" Grid.Row="7" Grid.RowSpan="7"/>
+        <Label x:Name="label" Content="Жанры:" Grid.Column="7" Grid.Row="8" HorizontalAlignment="Right" FontSize="12" />
+        <Label x:Name="labe2" Content="В/о:" Grid.Column="7" Grid.Row="9" HorizontalAlignment="Right" FontSize="12" />
+        <Label x:Name="labe3" Content="Год выпуска:" Grid.Column="7" Grid.Row="10" HorizontalAlignment="Right" FontSize="12"/>
+        <Label x:Name="labe4" Content="Режиссер:" Grid.Column="7" Grid.Row="11" HorizontalAlignment="Right" FontSize="12" />
+        <Label x:Name="labe5" Content="Актеры:" Grid.Column="7" Grid.RowSpan="2" Grid.Row="12" HorizontalAlignment="Right" FontSize="12" />
+        <TextBlock x:Name="nameTextBlock" Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="7" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="ganreTextBlock" Grid.Column="8" Grid.Row="8" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock x:Name="ageTextBlock" Grid.Column="8" Grid.Row="9" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock x:Name="dateTextBlock" Grid.Column="8" Grid.Row="10" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock x:Name="producerTextBlock" Grid.Column="8" Grid.Row="11" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock x:Name="actorsTextBlock" Grid.Column="8" Grid.Row="12" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left"/>
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="5" Grid.Row="6" Grid.RowSpan="10" Grid.ColumnSpan="4"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="6" Grid.Row="7" Grid.RowSpan="7"/>
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="1" Grid.Row="6" Grid.RowSpan="10" Grid.ColumnSpan="3"/>
 
     </Grid>
 </Window>

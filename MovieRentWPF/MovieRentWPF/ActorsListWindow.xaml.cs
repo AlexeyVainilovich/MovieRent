@@ -23,5 +23,12 @@ namespace MovieRentWPF
         {
             InitializeComponent();
         }
+
+        private void MainMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            var mainWindow = (MainWindow)(Application.Current.MainWindow);
+            mainWindow.Show();
+        }
     }
 }

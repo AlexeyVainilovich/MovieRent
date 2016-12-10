@@ -5,8 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieRentWPF"
         mc:Ignorable="d"
-        Title="ActorsListWindow" Height="300" Width="300">
-    <Grid>
-        
+        Title="ActorsListWindow" Height="625" Width="900">
+    <Grid x:Name="LayoutRoot"
+Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="195*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*" />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="250*" />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="15*" />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="150*" />
+            <ColumnDefinition Width="400*" />
+            <ColumnDefinition Width="15*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1"  Grid.Row="1" Grid.ColumnSpan="7" Background="Gray"/>
+        <Grid Grid.Column="2"  Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="3" Background="LightGray"/>
+        <Grid Grid.Column="1"  Grid.Row="6" Grid.ColumnSpan="3" Grid.RowSpan="10" Background="LightGray"/>
+        <Grid Grid.ColumnSpan="3" Grid.Column="5" Grid.Row="6" Grid.RowSpan="10" Background="LightGray" />
+        <Button x:Name="MainMenuButton" Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="3" Click="MainMenuButton_Click" ></Button>
+        <Label x:Name="label2" Content="Список актеров" Grid.Column="3"  Grid.ColumnSpan="6" HorizontalAlignment="Center"  Grid.Row="1"  />
+        <ListBox x:Name="listBox" Grid.Column="2" Grid.Row="7" Grid.RowSpan="8"/>
+        <Label x:Name="label" Content="Список фильмов:" Grid.Column="6" Grid.Row="8" HorizontalAlignment="Right" FontSize="12" />
+        <TextBlock x:Name="nameTextBlock" Grid.Column="6" Grid.ColumnSpan="2" Grid.Row="7" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="ganreTextBlock" Grid.Column="7" Grid.Row="8" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="5" Grid.Row="6" Grid.RowSpan="10" Grid.ColumnSpan="3"/>
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="1" Grid.Row="6" Grid.RowSpan="10" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>
