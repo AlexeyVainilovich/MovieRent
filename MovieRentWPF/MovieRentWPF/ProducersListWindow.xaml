@@ -46,9 +46,10 @@ Background="White">
         <Label x:Name="label2" Content="Список режиссеров" Grid.Column="3"  Grid.ColumnSpan="6" HorizontalAlignment="Center"  Grid.Row="1"  />
         <ListBox x:Name="listBox" Grid.Column="2" Grid.Row="7" Grid.RowSpan="8"/>
         <Label x:Name="label" Content="Список фильмов:" Grid.Column="6" Grid.Row="8" HorizontalAlignment="Right" FontSize="12" />
-        <TextBlock x:Name="nameTextBlock" Grid.Column="6" Grid.ColumnSpan="2" Grid.Row="7" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock x:Name="moviesTextBlock" Grid.Column="7" Grid.Row="8" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock x:Name="nameTextBlock" Grid.Column="6" Grid.ColumnSpan="2" Grid.Row="7" TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="moviesTextBlock" Grid.Column="7" Grid.Row="8" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="5" Grid.Row="6" Grid.RowSpan="10" Grid.ColumnSpan="3"/>
         <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="1" Grid.Row="6" Grid.RowSpan="10" Grid.ColumnSpan="3"/>
+        <Border BorderBrush="Gray" BorderThickness="2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="7"/>
     </Grid>
 </Window>

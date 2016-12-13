@@ -59,35 +59,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ApplicationViewModel1.cs" />
+    <Compile Include="ViewModel\ApplicationViewModel.cs" />
+    <Compile Include="Collection\Actor.cs" />
     <Compile Include="ActorAddWindow.xaml.cs">
       <DependentUpon>ActorAddWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Collection\ActorCollection.cs" />
     <Compile Include="ActorsListWindow.xaml.cs">
       <DependentUpon>ActorsListWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ActorWindow.xaml.cs">
-      <DependentUpon>ActorWindow.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Collection\Collection.cs" />
     <Compile Include="FindWindow.xaml.cs">
       <DependentUpon>FindWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Collection\Movie.cs" />
     <Compile Include="MovieAddWindow.xaml.cs">
       <DependentUpon>MovieAddWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Collection\MovieCollection.cs" />
     <Compile Include="MoviesListWindow.xaml.cs">
       <DependentUpon>MoviesListWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MovieWindow.xaml.cs">
-      <DependentUpon>MovieWindow.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Collection\Producer.cs" />
+    <Compile Include="ViewModel\Phone.cs" />
     <Compile Include="ProducerAddWindow.xaml.cs">
       <DependentUpon>ProducerAddWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Collection\ProducerCollection.cs" />
     <Compile Include="ProducersListWindow.xaml.cs">
       <DependentUpon>ProducersListWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ProducerWindow.xaml.cs">
-      <DependentUpon>ProducerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
@@ -97,10 +98,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ActorsListWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ActorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,19 +125,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MovieWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ProducerAddWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProducersListWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ProducerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,6 +164,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="Images\440-559459172f996.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MoviesRent — копия\MoviesRent\MoviesRent.csproj">
+      <Project>{e194876b-4986-4393-97ca-c8799446967a}</Project>
+      <Name>MoviesRent</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

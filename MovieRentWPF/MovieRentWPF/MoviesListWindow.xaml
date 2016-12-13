@@ -6,6 +6,20 @@
         xmlns:local="clr-namespace:MovieRentWPF"
         mc:Ignorable="d"
         Title="MoviesListWindow" Height="625" Width="900">
+    <Window.Resources>
+        <Style x:Key="TextBlockStyle">
+            <Setter Property="TextBlock.TextWrapping"  Value="Wrap"></Setter>
+            <Setter Property="TextBlock.HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="TextBlock.VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="TextBlock.FontSize" Value="12"></Setter>
+        </Style>
+        <Style x:Key="LabelStyle">
+            <Setter Property="Label.HorizontalAlignment" Value="Right"></Setter>
+            <Setter Property="Label.FontSize" Value="12"></Setter>
+        </Style>
+        
+    </Window.Resources>
+        
     <Grid x:Name="LayoutRoot"
 Background="White">
         <Grid.RowDefinitions>
@@ -23,14 +37,18 @@ Background="White">
             <RowDefinition Height="30*"/>
             <RowDefinition Height="30*"/>
             <RowDefinition Height="30*"/>
-            <RowDefinition Height="195*"/>
+            <RowDefinition Height="160*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="30*"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="15*" />
             <ColumnDefinition Width="5*" />
-            <ColumnDefinition Width="250*" />
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="150*" />
             <ColumnDefinition Width="5*" />
             <ColumnDefinition Width="15*" />
             <ColumnDefinition Width="5*" />
@@ -39,28 +57,40 @@ Background="White">
             <ColumnDefinition Width="260*" />
             <ColumnDefinition Width="15*" />
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="1"  Grid.Row="1" Grid.ColumnSpan="8" Background="Gray"/>
-        <Grid Grid.Column="2"  Grid.Row="2" Grid.ColumnSpan="7" Grid.RowSpan="3" Background="LightGray"/>
-        <Grid Grid.Column="1"  Grid.Row="6" Grid.ColumnSpan="3" Grid.RowSpan="10" Background="LightGray"/>
-        <Grid Grid.ColumnSpan="4" Grid.Column="5" Grid.Row="6" Grid.RowSpan="9" Background="LightGray" />
-        <Button x:Name="MainMenuButton" Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="3" Click="MainMenuButton_Click" ></Button>
-        <Label x:Name="label2" Content="Список фильмов" Grid.Column="3"  Grid.ColumnSpan="6" HorizontalAlignment="Center"  Grid.Row="1"  />
-        <ListBox x:Name="listBox" Grid.Column="2" Grid.Row="7" Grid.RowSpan="8"/>
-        <Image x:Name="image" Grid.Column="6" Grid.Row="7" Grid.RowSpan="7"/>
-        <Label x:Name="label" Content="Жанры:" Grid.Column="7" Grid.Row="8" HorizontalAlignment="Right" FontSize="12" />
-        <Label x:Name="labe2" Content="В/о:" Grid.Column="7" Grid.Row="9" HorizontalAlignment="Right" FontSize="12" />
-        <Label x:Name="labe3" Content="Год выпуска:" Grid.Column="7" Grid.Row="10" HorizontalAlignment="Right" FontSize="12"/>
-        <Label x:Name="labe4" Content="Режиссер:" Grid.Column="7" Grid.Row="11" HorizontalAlignment="Right" FontSize="12" />
-        <Label x:Name="labe5" Content="Актеры:" Grid.Column="7" Grid.RowSpan="2" Grid.Row="12" HorizontalAlignment="Right" FontSize="12" />
-        <TextBlock x:Name="nameTextBlock" Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="7" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock x:Name="ganreTextBlock" Grid.Column="8" Grid.Row="8" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <TextBlock x:Name="ageTextBlock" Grid.Column="8" Grid.Row="9" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <TextBlock x:Name="dateTextBlock" Grid.Column="8" Grid.Row="10" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <TextBlock x:Name="producerTextBlock" Grid.Column="8" Grid.Row="11" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <TextBlock x:Name="actorsTextBlock" Grid.Column="8" Grid.Row="12" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBlock"  HorizontalAlignment="Left"/>
-        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="5" Grid.Row="6" Grid.RowSpan="10" Grid.ColumnSpan="4"/>
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="6" Grid.Row="7" Grid.RowSpan="7"/>
-        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="1" Grid.Row="6" Grid.RowSpan="10" Grid.ColumnSpan="3"/>
+        <Grid Grid.Column="1"  Grid.Row="1" Grid.ColumnSpan="10" Background="Gray"/>
+        <Grid Grid.Column="2"  Grid.Row="2" Grid.ColumnSpan="9" Grid.RowSpan="3" Background="LightGray"/>
+        <Grid Grid.Column="1"  Grid.Row="6" Grid.ColumnSpan="5" Grid.RowSpan="12" Background="LightGray"/>
+        <Grid Grid.Column="7"  Grid.Row="6" Grid.ColumnSpan="4" Grid.RowSpan="12" Background="LightGray" />
+        
+        <Button x:Name="MainMenuButton" Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="5" Click="MainMenuButton_Click" ></Button>
+        <Button x:Name="AddButton" Grid.Column="2" Grid.Row="16" Click="AddButton_Click">+</Button>
+        <Button x:Name="RemoveButton" Grid.Column="3" Grid.Row="16">-</Button>
+        <ListBox x:Name="listBox" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3" Grid.RowSpan="8" ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedMovie}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=MovieName}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
+        <Image x:Name="image" Grid.Column="8" Grid.Row="7" Grid.RowSpan="7"/>
+        <Label x:Name="label2" Content="Список фильмов" Grid.Column="3"  Grid.ColumnSpan="8" HorizontalAlignment="Center"  Grid.Row="1"  />
+        <Label x:Name="label" Content="Жанры:" Grid.Column="9" Grid.Row="8" Style="{StaticResource LabelStyle}" />
+        <Label x:Name="labe2" Content="В/о:" Grid.Column="9" Grid.Row="9" Style="{StaticResource LabelStyle}"/>
+        <Label x:Name="labe3" Content="Год выпуска:" Grid.Column="9" Grid.Row="10" Style="{StaticResource LabelStyle}"/>
+        <Label x:Name="labe4" Content="Режиссер:" Grid.Column="9" Grid.Row="11" Style="{StaticResource LabelStyle}" />
+        <Label x:Name="labe5" Content="Актеры:" Grid.Column="9" Grid.RowSpan="2" Grid.Row="12" Style="{StaticResource LabelStyle}" />
+        <TextBlock x:Name="nameTextBlock"     Grid.Column="9" Grid.ColumnSpan="2" Grid.Row="7" TextWrapping="Wrap"   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="ganreTextBlock"    Grid.Column="10" Grid.Row="8" Style="{StaticResource TextBlockStyle}"/>
+        <TextBlock x:Name="ageTextBlock"      Grid.Column="10" Grid.Row="9" Style="{StaticResource TextBlockStyle}"/>
+        <TextBlock x:Name="dateTextBlock"     Grid.Column="10" Grid.Row="10" Style="{StaticResource TextBlockStyle}"/>
+        <TextBlock x:Name="producerTextBlock" Grid.Column="10" Grid.Row="11" Style="{StaticResource TextBlockStyle}"/>
+        <TextBlock x:Name="actorsTextBlock"   Grid.Column="10" Grid.Row="12" Grid.RowSpan="2" Style="{StaticResource TextBlockStyle}"/>
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="7" Grid.Row="6" Grid.RowSpan="12" Grid.ColumnSpan="4"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="8" Grid.Row="7" Grid.RowSpan="7"/>
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="1" Grid.Row="6" Grid.RowSpan="12" Grid.ColumnSpan="5"/>
+        <Border BorderBrush="Gray" BorderThickness="2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="10"/>
     </Grid>
 </Window>

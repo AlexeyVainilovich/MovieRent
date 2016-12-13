@@ -22,6 +22,7 @@ namespace MovieRentWPF
         public SettingsWindow()
         {
             InitializeComponent();
+
         }
 
         private void MainMenuButton_Click(object sender, RoutedEventArgs e)

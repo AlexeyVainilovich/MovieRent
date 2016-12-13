@@ -22,6 +22,7 @@ namespace MovieRentWPF
         public MoviesListWindow()
         {
             InitializeComponent();
+            DataContext = new ApplicationViewModel();
         }
 
         private void MainMenuButton_Click(object sender, RoutedEventArgs e)
@@ -29,6 +30,12 @@ namespace MovieRentWPF
             Hide();
             var mainWindow = (MainWindow)(Application.Current.MainWindow);
             mainWindow.Show();
+        }
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            MovieAddWindow movieAddWindow = new MovieAddWindow();
+            movieAddWindow.Show();
+
         }
     }
 }

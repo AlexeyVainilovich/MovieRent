@@ -15,18 +15,12 @@ C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\ob
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\MovieRentWPF_MarkupCompile.lref
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\SettingsWindow.baml
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\ActorsListWindow.g.cs
-C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\ActorWindow.g.cs
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\FindWindow.g.cs
-C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\ProducerWindow.g.cs
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\ActorsListWindow.baml
-C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\ActorWindow.baml
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\FindWindow.baml
-C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\ProducerWindow.baml
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\MoviesListWindow.g.cs
-C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\MovieWindow.g.cs
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\ProducersListWindow.g.cs
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\MoviesListWindow.baml
-C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\MovieWindow.baml
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\ProducersListWindow.baml
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\ActorAddWindow.g.cs
 C:\Users\Alex\documents\visual studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\MovieAddWindow.g.cs
@@ -70,3 +64,6 @@ C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\Settin
 C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieRentWPF.g.resources
 C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieRentWPF.Properties.Resources.resources
 C:\Users\Tim\Desktop\MovieRent-master\MovieRentWPF\MovieRentWPF\obj\Debug\MovieRentWPF.csproj.GenerateResource.Cache
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\MovieRentWPF\MovieRentWPF\obj\Debug\App.baml
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\MovieRentWPF\MovieRentWPF\bin\Debug\MoviesRent.dll
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\MovieRentWPF\MovieRentWPF\bin\Debug\MoviesRent.pdb
