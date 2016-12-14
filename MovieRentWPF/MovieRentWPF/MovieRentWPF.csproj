@@ -59,34 +59,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ApplicationViewModel1.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\MovieViewModel.cs" />
     <Compile Include="ViewModel\ApplicationViewModel.cs" />
-    <Compile Include="Collection\Actor.cs" />
     <Compile Include="ActorAddWindow.xaml.cs">
       <DependentUpon>ActorAddWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Collection\ActorCollection.cs" />
     <Compile Include="ActorsListWindow.xaml.cs">
       <DependentUpon>ActorsListWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Collection\Collection.cs" />
     <Compile Include="FindWindow.xaml.cs">
       <DependentUpon>FindWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Collection\Movie.cs" />
     <Compile Include="MovieAddWindow.xaml.cs">
       <DependentUpon>MovieAddWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Collection\MovieCollection.cs" />
     <Compile Include="MoviesListWindow.xaml.cs">
       <DependentUpon>MoviesListWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Collection\Producer.cs" />
-    <Compile Include="ViewModel\Phone.cs" />
     <Compile Include="ProducerAddWindow.xaml.cs">
       <DependentUpon>ProducerAddWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Collection\ProducerCollection.cs" />
     <Compile Include="ProducersListWindow.xaml.cs">
       <DependentUpon>ProducersListWindow.xaml</DependentUpon>
     </Compile>
@@ -169,7 +162,7 @@
     <SplashScreen Include="Images\440-559459172f996.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MoviesRent — копия\MoviesRent\MoviesRent.csproj">
+    <ProjectReference Include="..\..\MoviesRent\MoviesRent\MoviesRent.csproj">
       <Project>{e194876b-4986-4393-97ca-c8799446967a}</Project>
       <Name>MoviesRent</Name>
     </ProjectReference>

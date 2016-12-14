@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Collections.ObjectModel;
 using MoviesRent;
 
 namespace MovieRentWPF
@@ -8,8 +7,35 @@ namespace MovieRentWPF
     public class ApplicationViewModel : INotifyPropertyChanged
     {
         private Movie selectedMovie;
-
-        public MovieCollection Movies;
+        private MovieCollection _Movies;
+        public MovieCollection Movies
+        {
+            get { return _Movies; }
+            set
+            {
+                _Movies = value;
+                OnPropertyChanged("Movies");
+            }
+        }
+        public void Add(Movie m)
+        {
+            Movies.Add(m);
+        }
+        private RelayCommand addCommand;
+        public RelayCommand AddCommand
+        {
+            get
+            {
+                return addCommand ??
+                  (addCommand = new RelayCommand(obj =>
+                  {
+                      Movie movie = new Movie();
+                      movie.Name = "Fighting Club2";
+                      Movies.Add(movie);
+                      SelectedMovie = movie;
+                  }));
+            }
+        }
 
         public Movie SelectedMovie
         {
@@ -23,17 +49,18 @@ namespace MovieRentWPF
 
         public ApplicationViewModel()
         {
-            Movies = new MovieCollection();
-            
-            Movies.Add(new Movie { MovieName = "Filth1" });
-            Movies.Add(new Movie { MovieName = "Filth2" });
+            Movies = new MovieCollection() {
+            new Movie { Name = "Filth", Age="18+", Date="2005", Genres="Action" }
+            };
+            Producer myProducer = new Producer { Name = "Eric" };
+            ActorCollection myActor = new ActorCollection { new Actor { Name = "Alex"}, new Actor { Name = "Tom" }, new Actor { Name = "Bill" } };
+            Movies.Add(new Movie { Name = "Fighting Club", Age = "18+", Date = "1999", Genres = "Action", Actors = myActor, Producer = myProducer });
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
+        public void OnPropertyChanged(string prop)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
     }
 }

@@ -23,7 +23,8 @@ namespace MovieRentWPF
         public MainWindow()
         {
             InitializeComponent();
-           
+
+                       
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
@@ -36,6 +37,7 @@ namespace MovieRentWPF
         private void ActorsButton_Click(object sender, RoutedEventArgs e)
         {
             //Hide();
+            
             ActorsListWindow actorsListWindow = new ActorsListWindow();
             actorsListWindow.Show();
         }
@@ -44,6 +46,7 @@ namespace MovieRentWPF
         {
             //Hide();
             MoviesListWindow moviesListWindow = new MoviesListWindow();
+            moviesListWindow.Owner = this;
             moviesListWindow.Show();
         }
 

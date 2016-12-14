@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace MovieRentWPF
 {
@@ -22,19 +23,26 @@ namespace MovieRentWPF
         public MoviesListWindow()
         {
             InitializeComponent();
+
             DataContext = new ApplicationViewModel();
         }
 
         private void MainMenuButton_Click(object sender, RoutedEventArgs e)
         {
+
             Hide();
             var mainWindow = (MainWindow)(Application.Current.MainWindow);
             mainWindow.Show();
+
         }
+        
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            
             MovieAddWindow movieAddWindow = new MovieAddWindow();
+            movieAddWindow.Owner = this;
             movieAddWindow.Show();
+            
 
         }
     }

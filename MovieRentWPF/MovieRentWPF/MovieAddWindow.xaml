@@ -6,6 +6,18 @@
         xmlns:local="clr-namespace:MovieRentWPF"
         mc:Ignorable="d"
         Title="MovieAddWindow" Height="400" Width="650">
+    <Window.Resources>
+    <Style x:Key="LabelStyle">
+            <Setter Property="Label.HorizontalAlignment" Value="Center" />
+            <Setter Property="Label.VerticalAlignment" Value="Center" />
+            <Setter Property="Label.FontSize" Value="12" />
+        </Style>
+        <Style x:Key="TextBoxStyle">
+            <Setter Property="TextBox.TextWrapping" Value="NoWrap" />
+            <Setter Property="TextBox.VerticalAlignment" Value="Center" />
+            <Setter Property="TextBox.FontSize" Value="11" />
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="15*" />
@@ -26,20 +38,21 @@
             <ColumnDefinition Width="100*" />
         </Grid.ColumnDefinitions>
         <Label x:Name="label" Content="Добавить фильм" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"  Grid.Row="1" Grid.RowSpan="2" FontSize="14"  />
-        <Label x:Name="label1" Content="Название" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="2" FontSize="12" VerticalAlignment="Center"/>
-        <Label x:Name="label2" Content="Постер" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="3" FontSize="12" VerticalAlignment="Center"/>
-        <Label x:Name="label3" Content="Жанр" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="4" FontSize="12" VerticalAlignment="Center"/>
-        <Label x:Name="label4" Content="Возраст. огр." Grid.Column="0" HorizontalAlignment="Center" Grid.Row="5" FontSize="12" VerticalAlignment="Center"/>
-        <Label x:Name="label5" Content="Актеры" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="6" FontSize="12" VerticalAlignment="Center"/>
-        <Label x:Name="label6" Content="Режиссер" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="7" FontSize="12" VerticalAlignment="Center"/>
-        <Label x:Name="label7" Content="Год выпуска" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="8" FontSize="12" VerticalAlignment="Center"/>
-        <TextBox x:Name="nameTextBox" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center"/>
-        <TextBox x:Name="posterTextBox" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center"/>
-        <TextBox x:Name="genreTextBox" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center"/>
-        <TextBox x:Name="ageTextBox" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center"/>
-        <TextBox x:Name="actorsTextBox" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" FontSize="11" VerticalAlignment="Center"/>
-        <TextBox x:Name="producerTextBox" Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center"/>
-        <TextBox x:Name="dateTextBox" Grid.Column="1" Grid.Row="8" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center"/>
-        <Button x:Name="button" Content="Добавить" Grid.Column="0" HorizontalAlignment="Center"  Grid.Row="9" Grid.ColumnSpan="3" FontSize="12" VerticalAlignment="Center" />
+        <Label x:Name="label1" Content="Название" Grid.Column="0"  Grid.Row="2" Style="{StaticResource LabelStyle}"/>
+        <Label x:Name="label2" Content="Постер" Grid.Column="0"  Grid.Row="3" Style="{StaticResource LabelStyle}"/>
+        <Label x:Name="label3" Content="Жанр" Grid.Column="0"  Grid.Row="4" Style="{StaticResource LabelStyle}"/>
+        <Label x:Name="label4" Content="Возраст. огр." Grid.Column="0"  Grid.Row="5" Style="{StaticResource LabelStyle}"/>
+        <Label x:Name="label7" Content="Год выпуска" Grid.Column="0"  Grid.Row="6" Style="{StaticResource LabelStyle}"/>
+        <Label x:Name="label6" Content="Режиссер" Grid.Column="0"  Grid.Row="7" Style="{StaticResource LabelStyle}"/>
+        <Label x:Name="label5" Content="Актеры" Grid.Column="0"  Grid.Row="8" Style="{StaticResource LabelStyle}"/>
+  
+        <TextBox x:Name="nameTextBox" Grid.Column="1" Grid.Row="2" Style="{StaticResource TextBoxStyle}" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="posterTextBox" Grid.Column="1" Grid.Row="3" Style="{StaticResource TextBoxStyle}" Text="{Binding Poster, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="genreTextBox" Grid.Column="1" Grid.Row="4" Style="{StaticResource TextBoxStyle}"  Text="{Binding Genre, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="ageTextBox" Grid.Column="1" Grid.Row="5" Style="{StaticResource TextBoxStyle}" Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="dateTextBox" Grid.Column="1" Grid.Row="6" Style="{StaticResource TextBoxStyle}" Text="{Binding Date, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="producerTextBox" Grid.Column="1" Grid.Row="7" Style="{StaticResource TextBoxStyle}" Text="{Binding Producer, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="actorsTextBox" Grid.Column="1" Grid.Row="8" Style="{StaticResource TextBoxStyle}" Text="{Binding Actors, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button x:Name="button" Content="Добавить" Grid.Column="0" HorizontalAlignment="Center"  Grid.Row="9" Grid.ColumnSpan="3" FontSize="12" VerticalAlignment="Center" Command="{Binding AddCommand}"/>
     </Grid>
 </Window>

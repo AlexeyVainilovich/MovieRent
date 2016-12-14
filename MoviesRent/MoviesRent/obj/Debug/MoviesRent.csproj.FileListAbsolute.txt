@@ -1,0 +1,5 @@
+C:\Users\Alex\documents\visual studio 2015\Projects\MoviesRent\MoviesRent\bin\Debug\MoviesRent.dll
+C:\Users\Alex\documents\visual studio 2015\Projects\MoviesRent\MoviesRent\bin\Debug\MoviesRent.pdb
+C:\Users\Alex\documents\visual studio 2015\Projects\MoviesRent\MoviesRent\obj\Debug\MoviesRent.dll
+C:\Users\Alex\documents\visual studio 2015\Projects\MoviesRent\MoviesRent\obj\Debug\MoviesRent.pdb
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\MoviesRent\MoviesRent\obj\Debug\MoviesRent.csprojResolveAssemblyReference.cache
