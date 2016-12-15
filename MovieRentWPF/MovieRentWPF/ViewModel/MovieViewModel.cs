@@ -9,96 +9,83 @@ using System.Threading.Tasks;
 
 namespace MovieRentWPF
 {
-    class MovieViewModel : INotifyPropertyChanged
+    public class MovieViewModel : INotifyPropertyChanged
     {
-        private Movie movie = new Movie();
-        private string actors;
-        private string producer;
+        private Movie selectedMovie;
+        private string listOfActors;
+        private MovieCollection _Movies;
 
-        public MovieViewModel(){}
-
-        public MovieViewModel(Movie m)
+        public MovieCollection Movies
         {
-            movie = m;
-        }
-
-
-        public Movie Return()
-        {
-            return movie;
-        }
-
-        public string Name
-        {
-            get { return movie.Name; }
+            get { return _Movies; }
             set
             {
-                movie.Name = value;
-                
+                _Movies = value;
+                OnPropertyChanged("Movies");
             }
         }
-        public string Porster
+        public string ListOfActors
         {
-            get { return movie.Poster; }
-            set
-            {
-                movie.Poster = value;
-               
-            }
+            get { return listOfActors; }
+            set { listOfActors = value; }
         }
 
-        public string Genre
-        {
-            get { return movie.Genres; }
-            set
-            {
-                movie.Genres = value;
-                
-            }
-        }
-
-        public string Age
-        {
-            get { return movie.Age; }
-            set
-            {
-                movie.Age = value;
-               
-            }
-        }
-
-        public string Date
-        {
-            get { return movie.Date; }
-            set
-            {
-                movie.Date = value;
-                
-            }
-        }
-
-        public string Actors
+        private RelayCommand addCommand;
+        public RelayCommand AddCommand
         {
             get
             {
-                return actors;
-            }
-            set
-            {
-                actors = value;
+                return addCommand ??
+                  (addCommand = new RelayCommand(obj =>
+                  {
+                      Movie movie = new Movie();
+                      Producer producer = new Producer() {Name = "Producer" };
+                      movie.Name = "Name";
+                      movie.Age = "Age";
+                      movie.Date = "Date";
+                      movie.Poster = "/Images/westworld.jpg";
+                      movie.Genres = "Genres";
+                      movie.Producer = producer;
+                      Movies.Add(movie);
+                      SelectedMovie = movie;
+                  }));
             }
         }
 
-        public string Producer
+        private RelayCommand saveCommand;
+        public RelayCommand SaveCommand
         {
-            get {
-                
-                return producer;
+            get
+            {
+                return saveCommand ??
+                  (saveCommand = new RelayCommand(obj =>
+                  {
+
+                      ActorCollection actorCollection = new ActorCollection() {new  Actor() { Name = listOfActors } };
+                      SelectedMovie.Actors = actorCollection;
+                      OnPropertyChanged("SelectedMovie");
+                  }));
             }
+        }
+
+        public Movie SelectedMovie
+        {
+            get { return selectedMovie; }
             set
             {
-                producer = value;
+                selectedMovie = value;
+                OnPropertyChanged("SelectedMovie");
             }
+        }
+
+        public MovieViewModel()
+        {
+            Movies = new MovieCollection() {
+            new Movie { Name = "Filth", Age="18+", Date="2005", Genres="Action" }
+            };
+            Producer myProducer = new Producer { Name = "Eric" };
+            ActorCollection myActor = new ActorCollection { new Actor { Name = "Alex" }, new Actor { Name = "Tom" }, new Actor { Name = "Bill" } };
+            Movies.Add(new Movie { Name = "Fighting Club", Age = "18+", Date = "1999", Genres = "Action", Actors = myActor, Producer = myProducer });
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieRentWPF"
         mc:Ignorable="d"
-        Title="MovieAddWindow" Height="400" Width="650">
+        Title="MovieAddWindow" Height="400" Width="650"
+        WindowStartupLocation="CenterScreen" MinHeight="400" MinWidth="650">
     <Window.Resources>
     <Style x:Key="LabelStyle">
             <Setter Property="Label.HorizontalAlignment" Value="Center" />
@@ -45,14 +46,14 @@
         <Label x:Name="label7" Content="Год выпуска" Grid.Column="0"  Grid.Row="6" Style="{StaticResource LabelStyle}"/>
         <Label x:Name="label6" Content="Режиссер" Grid.Column="0"  Grid.Row="7" Style="{StaticResource LabelStyle}"/>
         <Label x:Name="label5" Content="Актеры" Grid.Column="0"  Grid.Row="8" Style="{StaticResource LabelStyle}"/>
-  
-        <TextBox x:Name="nameTextBox" Grid.Column="1" Grid.Row="2" Style="{StaticResource TextBoxStyle}" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox x:Name="posterTextBox" Grid.Column="1" Grid.Row="3" Style="{StaticResource TextBoxStyle}" Text="{Binding Poster, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox x:Name="genreTextBox" Grid.Column="1" Grid.Row="4" Style="{StaticResource TextBoxStyle}"  Text="{Binding Genre, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox x:Name="ageTextBox" Grid.Column="1" Grid.Row="5" Style="{StaticResource TextBoxStyle}" Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox x:Name="dateTextBox" Grid.Column="1" Grid.Row="6" Style="{StaticResource TextBoxStyle}" Text="{Binding Date, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox x:Name="producerTextBox" Grid.Column="1" Grid.Row="7" Style="{StaticResource TextBoxStyle}" Text="{Binding Producer, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox x:Name="actorsTextBox" Grid.Column="1" Grid.Row="8" Style="{StaticResource TextBoxStyle}" Text="{Binding Actors, UpdateSourceTrigger=PropertyChanged}"/>
-        <Button x:Name="button" Content="Добавить" Grid.Column="0" HorizontalAlignment="Center"  Grid.Row="9" Grid.ColumnSpan="3" FontSize="12" VerticalAlignment="Center" Command="{Binding AddCommand}"/>
+
+        <TextBox x:Name="nameTextBox" Grid.Column="1" Grid.Row="2" Style="{StaticResource TextBoxStyle}" Text="{Binding MovieView.SelectedMovie.Name, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="posterTextBox" Grid.Column="1" Grid.Row="3" Style="{StaticResource TextBoxStyle}" Text="{Binding MovieView.SelectedMovie.Poster, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="genreTextBox" Grid.Column="1" Grid.Row="4" Style="{StaticResource TextBoxStyle}"  Text="{Binding MovieView.SelectedMovie.Genres, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="ageTextBox" Grid.Column="1" Grid.Row="5" Style="{StaticResource TextBoxStyle}" Text="{Binding MovieView.SelectedMovie.Age, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="dateTextBox" Grid.Column="1" Grid.Row="6" Style="{StaticResource TextBoxStyle}" Text="{Binding MovieView.SelectedMovie.Date, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="producerTextBox" Grid.Column="1" Grid.Row="7" Style="{StaticResource TextBoxStyle}" Text="{Binding MovieView.SelectedMovie.Producer.Name, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="actorsTextBox" Grid.Column="1" Grid.Row="8" Style="{StaticResource TextBoxStyle}" Text="{Binding MovieView.ListOfActors, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button x:Name="buttonAdd" Content="Добавить" Grid.Column="0" HorizontalAlignment="Center"  Grid.Row="9" Grid.ColumnSpan="3" FontSize="12" VerticalAlignment="Center" Click="buttonAdd_Click" Command="{Binding MovieView.SaveCommand}"/>
     </Grid>
 </Window>

@@ -19,9 +19,10 @@ namespace MovieRentWPF
     /// </summary>
     public partial class ProducerAddWindow : Window
     {
-        public ProducerAddWindow()
+        public ProducerAddWindow(object data)
         {
             InitializeComponent();
+            DataContext = data;
         }
     }
 }

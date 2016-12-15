@@ -20,30 +20,24 @@ namespace MovieRentWPF
     /// </summary>
     public partial class MoviesListWindow : Window
     {
-        public MoviesListWindow()
+        public MoviesListWindow(object data)
         {
             InitializeComponent();
-
-            DataContext = new ApplicationViewModel();
+            DataContext = data;
         }
 
         private void MainMenuButton_Click(object sender, RoutedEventArgs e)
         {
-
-            Hide();
-            var mainWindow = (MainWindow)(Application.Current.MainWindow);
+            MainWindow mainWindow = new MainWindow(DataContext);
             mainWindow.Show();
-
+            Close();
         }
         
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            
-            MovieAddWindow movieAddWindow = new MovieAddWindow();
-            movieAddWindow.Owner = this;
+            MovieAddWindow movieAddWindow = new MovieAddWindow(DataContext);
             movieAddWindow.Show();
-            
-
+            this.Close();
         }
     }
 }

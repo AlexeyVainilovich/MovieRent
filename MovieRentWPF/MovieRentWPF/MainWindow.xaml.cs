@@ -22,9 +22,14 @@ namespace MovieRentWPF
     {
         public MainWindow()
         {
-            InitializeComponent();
+            DataContext = new ApplicationViewModel(); 
+            InitializeComponent();            
+        }
 
-                       
+        public MainWindow(object data)
+        {
+            DataContext = data;
+            InitializeComponent();
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
@@ -36,25 +41,24 @@ namespace MovieRentWPF
 
         private void ActorsButton_Click(object sender, RoutedEventArgs e)
         {
-            //Hide();
             
             ActorsListWindow actorsListWindow = new ActorsListWindow();
             actorsListWindow.Show();
+            Close();
         }
 
         private void MoviesButton_Click(object sender, RoutedEventArgs e)
         {
-            //Hide();
-            MoviesListWindow moviesListWindow = new MoviesListWindow();
-            moviesListWindow.Owner = this;
+            MoviesListWindow moviesListWindow = new MoviesListWindow(DataContext);
             moviesListWindow.Show();
+            Close();
         }
 
         private void ProducersButton_Click(object sender, RoutedEventArgs e)
         {
-            //Hide();
-            ProducersListWindow producersListWindow = new ProducersListWindow();
+            ProducersListWindow producersListWindow = new ProducersListWindow(DataContext);
             producersListWindow.Show();
+            Close();
         }
 
         private void FindButton_Click(object sender, RoutedEventArgs e)

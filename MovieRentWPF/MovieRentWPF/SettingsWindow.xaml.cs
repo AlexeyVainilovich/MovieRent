@@ -40,14 +40,12 @@ namespace MovieRentWPF
 
         private void movieAddButton_Click(object sender, RoutedEventArgs e)
         {
-            MovieAddWindow movieAddWindow = new MovieAddWindow();
-            movieAddWindow.Show(); 
+          
         }
 
         private void produserAddButton_Click(object sender, RoutedEventArgs e)
         {
-            ProducerAddWindow producerAddWindow = new ProducerAddWindow();
-            producerAddWindow.Show();
+        
         }
     }
 }

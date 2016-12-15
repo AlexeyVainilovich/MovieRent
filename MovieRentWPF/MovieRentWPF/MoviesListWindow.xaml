@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieRentWPF"
         mc:Ignorable="d"
-        Title="MoviesListWindow" Height="625" Width="900" WindowStartupLocation="CenterOwner">
+        Title="MoviesListWindow" Height="625" Width="900" 
+        WindowStartupLocation="CenterScreen"
+        MinHeight="625" MinWidth="900">
     <Window.Resources>
         <Style x:Key="TextBlockStyle">
             <Setter Property="TextBlock.TextWrapping"  Value="Wrap"></Setter>
@@ -63,18 +65,25 @@ Background="White">
         <Grid Grid.Column="7"  Grid.Row="6" Grid.ColumnSpan="4" Grid.RowSpan="12" Background="LightGray" />
         
         <Button x:Name="MainMenuButton" Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="5" Click="MainMenuButton_Click" ></Button>
-        <Button x:Name="AddButton" Command="{Binding AddCommand}" Grid.Column="2" Grid.Row="16" Click="AddButton_Click">+</Button>
+        <Button x:Name="AddButton" Command="{Binding MovieView.AddCommand}" ClickMode="Release"  Grid.Column="2" Grid.Row="16" Click="AddButton_Click">+</Button>
         <Button x:Name="RemoveButton" Grid.Column="3" Grid.Row="16">-</Button>
-        <ListBox x:Name="listBox" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3" Grid.RowSpan="8" ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedMovie}" >
+        <ListBox x:Name="listBox" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3" Grid.RowSpan="8" ItemsSource="{Binding MovieView.Movies}" SelectedItem="{Binding MovieView.SelectedMovie}" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                        <TextBlock >
+                            <TextBlock.Text>
+                                 <MultiBinding StringFormat="{}{0}({1})">
+                                    <Binding Path="Name" />
+                                     <Binding Path="Date" />
+                                 </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ListBox x:Name="actorsListBox" Grid.Column="10" Grid.Row="12" Grid.RowSpan="2" IsHitTestVisible="False" Background="LightGray" BorderThickness="0" ItemsSource="{Binding SelectedMovie.Actors}">
+        <ListBox x:Name="actorsListBox" Grid.Column="10" Grid.Row="12" Grid.RowSpan="2" IsHitTestVisible="False" Background="LightGray" BorderThickness="0" ItemsSource="{Binding MovieView.SelectedMovie.Actors}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -84,18 +93,18 @@ Background="White">
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Image x:Name="image" Grid.Column="8" Grid.Row="7" Grid.RowSpan="7"/>
+        <Image x:Name="image" Grid.Column="8" Grid.Row="7" Grid.RowSpan="7" Source="{Binding MovieView.SelectedMovie.Poster}"/>
         <Label x:Name="label2" Content="Список фильмов" Grid.Column="3"  Grid.ColumnSpan="8" HorizontalAlignment="Center"  Grid.Row="1"  />
         <Label x:Name="label" Content="Жанры:" Grid.Column="9" Grid.Row="8" Style="{StaticResource LabelStyle}" />
         <Label x:Name="labe2" Content="В/о:" Grid.Column="9" Grid.Row="9" Style="{StaticResource LabelStyle}"/>
         <Label x:Name="labe3" Content="Год выпуска:" Grid.Column="9" Grid.Row="10" Style="{StaticResource LabelStyle}"/>
         <Label x:Name="labe4" Content="Режиссер:" Grid.Column="9" Grid.Row="11" Style="{StaticResource LabelStyle}" />
         <Label x:Name="labe5" Content="Актеры:" Grid.Column="9" Grid.RowSpan="2" Grid.Row="12" Style="{StaticResource LabelStyle}" />
-        <TextBlock x:Name="nameTextBlock"     Grid.Column="9" Grid.ColumnSpan="2" Grid.Row="7" TextWrapping="Wrap"   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"  Text="{Binding SelectedMovie.MovieName, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBlock x:Name="ganreTextBlock"    Grid.Column="10" Grid.Row="8"  Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedMovie.Genres, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBlock x:Name="ageTextBlock"      Grid.Column="10" Grid.Row="9"  Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedMovie.Age, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBlock x:Name="dateTextBlock"     Grid.Column="10" Grid.Row="10" Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedMovie.Date, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBlock x:Name="producerTextBlock" Grid.Column="10" Grid.Row="11" Style="{StaticResource TextBlockStyle}" Text="{Binding SelectedMovie.Producer.Name, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock x:Name="nameTextBlock"     Grid.Column="9" Grid.ColumnSpan="2" Grid.Row="7" TextWrapping="Wrap"   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"  Text="{Binding MovieView.SelectedMovie.Name, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock x:Name="ganreTextBlock"    Grid.Column="10" Grid.Row="8"  Style="{StaticResource TextBlockStyle}" Text="{Binding MovieView.SelectedMovie.Genres, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock x:Name="ageTextBlock"      Grid.Column="10" Grid.Row="9"  Style="{StaticResource TextBlockStyle}" Text="{Binding MovieView.SelectedMovie.Age, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock x:Name="dateTextBlock"     Grid.Column="10" Grid.Row="10" Style="{StaticResource TextBlockStyle}" Text="{Binding MovieView.SelectedMovie.Date, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock x:Name="producerTextBlock" Grid.Column="10" Grid.Row="11" Style="{StaticResource TextBlockStyle}" Text="{Binding MovieView.SelectedMovie.Producer.Name, UpdateSourceTrigger=PropertyChanged}"/>
         <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="7" Grid.Row="6" Grid.RowSpan="12" Grid.ColumnSpan="4"/> 
         <Border BorderBrush="Black" BorderThickness="1" Grid.Column="8" Grid.Row="7" Grid.RowSpan="7"/>
         <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="1" Grid.Row="6" Grid.RowSpan="12" Grid.ColumnSpan="5"/>

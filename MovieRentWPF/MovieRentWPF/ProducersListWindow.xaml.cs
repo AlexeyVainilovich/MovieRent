@@ -19,16 +19,17 @@ namespace MovieRentWPF
     /// </summary>
     public partial class ProducersListWindow : Window
     {
-        public ProducersListWindow()
+        public ProducersListWindow(object data)
         {
             InitializeComponent();
+            DataContext = data;
         }
 
         private void MainMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            Hide();
-            var mainWindow = (MainWindow)(Application.Current.MainWindow);
+            MainWindow mainWindow = new MainWindow(DataContext);
             mainWindow.Show();
+            Close();
         }
     }
 }

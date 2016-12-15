@@ -23,19 +23,6 @@ namespace MoviesRent
             }
         }
 
-        private string photo;
-        public string Photo
-        {
-            get
-            {
-                return photo;
-            }
-            set
-            {
-                photo = value;
-            }
-        }
-
         private string date;
         public string Date
         {
