@@ -37,9 +37,5 @@ namespace MovieRentWPF
             Close();
         }
 
-        private void Window_Initialized(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieRentWPF"
         mc:Ignorable="d"
-        Title="ActorAddWindow" Height="400" Width="650">
+        Title="ActorAddWindow" Height="400" Width="650"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="400" MinWidth="650">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="15*" />
@@ -30,10 +32,10 @@
         <Label x:Name="label2" Content="Дата рождения" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="3" FontSize="12" VerticalAlignment="Center"/>
         <Label x:Name="label3" Content="Список фильмов" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="4" FontSize="12" VerticalAlignment="Center"/>
         <Label x:Name="label4" Content="Краткая биография" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="6" FontSize="12" VerticalAlignment="Center"/>
-        <TextBox x:Name="nameTextBox" Grid.Column="1" Grid.Row="2" FontSize="11" TextWrapping="Wrap"  VerticalAlignment="Center"/>
-        <TextBox x:Name="dateTextBox" Grid.Column="1" Grid.Row="3" FontSize="11" TextWrapping="Wrap"  VerticalAlignment="Center"/>
-        <TextBox x:Name="filmlsTextBox" Grid.Column="1" Grid.Row="4" FontSize="11"  TextWrapping="Wrap"/>
-        <TextBox x:Name="infoTextBox" Grid.Column="1" Grid.Row="6" Grid.RowSpan="3" FontSize="11" TextWrapping="Wrap"/>
-        <Button x:Name="button" Content="Добавить" Grid.Column="0" HorizontalAlignment="Center"  Grid.Row="9" Grid.ColumnSpan="3" FontSize="12" VerticalAlignment="Center" Click="button_Click" />
+        <TextBox x:Name="nameTextBox" Grid.Column="1" Grid.Row="2" FontSize="11" TextWrapping="Wrap"  VerticalAlignment="Center" Text="{Binding ActorView.SelectedActor.Name, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="dateTextBox" Grid.Column="1" Grid.Row="3" FontSize="11" TextWrapping="Wrap"  VerticalAlignment="Center" Text="{Binding ActorView.SelectedActor.Date, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="filmlsTextBox" Grid.Column="1" Grid.Row="4" FontSize="11"  TextWrapping="Wrap" Text="{Binding ActorView.ListOfMovies, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="infoTextBox" Grid.Column="1" Grid.Row="6" Grid.RowSpan="3" FontSize="11" TextWrapping="Wrap" Text="{Binding ActorView.SelectedActor.Biography, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button x:Name="AddButton" Content="Добавить" Grid.Column="0" HorizontalAlignment="Center"  Grid.Row="9" Grid.ColumnSpan="3" FontSize="12" VerticalAlignment="Center" Click="AddButton_Click"  Command="{Binding ActorView.SaveCommand}"/>
     </Grid>
 </Window>

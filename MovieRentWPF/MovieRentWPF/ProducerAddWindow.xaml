@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieRentWPF"
         mc:Ignorable="d"
-        Title="ProducerAddWindow" Height="240" Width="650">
+        Title="ProducerAddWindow" Height="240" Width="650"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="240" MinWidth="650">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="37*" />
@@ -24,8 +26,8 @@
         <Label x:Name="label" Content="Добавить продюссер" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"  Grid.Row="1" Grid.RowSpan="2" FontSize="14"  />
         <Label x:Name="label1" Content="Имя" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="2" FontSize="12" VerticalAlignment="Center"/>
         <Label x:Name="label2" Content="Список фильмов" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="3" FontSize="12" VerticalAlignment="Center"/>
-        <TextBox x:Name="nameTextBox" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center"/>
-        <TextBox x:Name="posterTextBox" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" FontSize="11" TextWrapping="Wrap"/>
-        <Button x:Name="button" Content="Добавить" Grid.Column="0" HorizontalAlignment="Center"  Grid.Row="5" Grid.ColumnSpan="3" FontSize="12" VerticalAlignment="Center" />
+        <TextBox x:Name="nameTextBox" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" FontSize="11"  VerticalAlignment="Center" Text="{Binding ProducerView.SelectedProducer.Name}"/>
+        <TextBox x:Name="posterTextBox" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" FontSize="11" TextWrapping="Wrap" Text="{Binding ProducerView.ListOfMovies}"/>
+        <Button x:Name="button" Content="Добавить" Grid.Column="0" HorizontalAlignment="Center"  Grid.Row="5" Grid.ColumnSpan="3" FontSize="12" VerticalAlignment="Center" Command="{Binding ProducerView.SaveCommand}" Click="button_Click" />
     </Grid>
 </Window>

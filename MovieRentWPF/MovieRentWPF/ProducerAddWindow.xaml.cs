@@ -24,5 +24,12 @@ namespace MovieRentWPF
             InitializeComponent();
             DataContext = data;
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            ProducersListWindow producerListWindow = new ProducersListWindow(DataContext);
+            producerListWindow.Show();
+            Close();
+        }
     }
 }

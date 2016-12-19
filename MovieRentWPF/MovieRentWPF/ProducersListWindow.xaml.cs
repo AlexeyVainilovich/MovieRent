@@ -31,5 +31,12 @@ namespace MovieRentWPF
             mainWindow.Show();
             Close();
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            ProducerAddWindow producerAddWindow = new ProducerAddWindow(DataContext);
+            producerAddWindow.Show();
+            Close();
+        }
     }
 }

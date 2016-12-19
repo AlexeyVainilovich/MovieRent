@@ -19,13 +19,17 @@ namespace MovieRentWPF
     /// </summary>
     public partial class ActorAddWindow : Window
     {
-        public ActorAddWindow()
+        public ActorAddWindow(object data)
         {
             InitializeComponent();
+            DataContext = data;
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            ActorsListWindow actorListWindow = new ActorsListWindow(DataContext);
+            actorListWindow.Show();
+            Close();
             
         }
     }

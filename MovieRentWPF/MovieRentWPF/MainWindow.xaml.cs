@@ -35,14 +35,14 @@ namespace MovieRentWPF
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             Hide();
-            SettingsWindow settingWindow = new SettingsWindow();
+            SettingsWindow settingWindow = new SettingsWindow(DataContext);
             settingWindow.Show();
         }
 
         private void ActorsButton_Click(object sender, RoutedEventArgs e)
         {
             
-            ActorsListWindow actorsListWindow = new ActorsListWindow();
+            ActorsListWindow actorsListWindow = new ActorsListWindow(DataContext);
             actorsListWindow.Show();
             Close();
         }

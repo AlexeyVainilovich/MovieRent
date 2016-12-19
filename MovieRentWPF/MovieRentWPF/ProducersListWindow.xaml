@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieRentWPF"
         mc:Ignorable="d"
-        Title="ProducersListWindow" Height="625" Width="900">
+        Title="ProducersListWindow" Height="625" Width="900"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="625" MinWidth="900">
     <Grid x:Name="LayoutRoot"
 Background="White">
         <Grid.RowDefinitions>
@@ -47,12 +49,29 @@ Background="White">
         <Grid Grid.Column="2"  Grid.Row="2" Grid.ColumnSpan="8" Grid.RowSpan="3" Background="LightGray"/>
         <Grid Grid.Column="1"  Grid.Row="6" Grid.ColumnSpan="5" Grid.RowSpan="12" Background="LightGray"/>
         <Grid Grid.ColumnSpan="3" Grid.Column="7" Grid.Row="6" Grid.RowSpan="12" Background="LightGray" />
+        <Button x:Name="AddButton" Grid.Column="2" Grid.Row="16" Command="{Binding ProducerView.AddCommand}" Click="AddButton_Click">+</Button>
         <Button x:Name="MainMenuButton" Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="5" Click="MainMenuButton_Click" ></Button>
-        <Label x:Name="label2" Content="Список режиссеров" Grid.Column="3"  Grid.ColumnSpan="7" HorizontalAlignment="Center"  Grid.Row="1"  />
-        <ListBox x:Name="listBox" Grid.Column="2" Grid.Row="7" Grid.RowSpan="8" Grid.ColumnSpan="3"/>
+        <Label x:Name="label2" Content="Список режиссеров" Grid.Column="3"  Grid.ColumnSpan="7" HorizontalAlignment="Center"  Grid.Row="1"/>
+        <ListBox x:Name="listBox" Grid.Column="2" Grid.Row="7" Grid.RowSpan="8" Grid.ColumnSpan="3" ItemsSource="{Binding ProducerView.Producers}" SelectedItem="{Binding ProducerView.SelectedProducer}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" Focusable="False" ></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Label x:Name="label" Content="Список фильмов:" Grid.Column="8" Grid.Row="8" HorizontalAlignment="Right" FontSize="12" />
-        <TextBlock x:Name="nameTextBlock" Grid.Column="8" Grid.ColumnSpan="2" Grid.Row="7" TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock x:Name="moviesTextBlock" Grid.Column="9" Grid.Row="8" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock x:Name="nameTextBlock" Grid.Column="8" Grid.ColumnSpan="2" Grid.Row="7" TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding ProducerView.SelectedProducer.Name}"/>
+        <ListBox x:Name="moviesListBox" Grid.Column="9" Grid.Row="8" Grid.RowSpan="2" IsHitTestVisible="False" Background="LightGray" BorderThickness="0" ItemsSource="{Binding ProducerView.SelectedProducer.Movies}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Name}" Focusable="False" ></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="7" Grid.Row="6" Grid.RowSpan="12" Grid.ColumnSpan="3"/>
         <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="1" Grid.Row="6" Grid.RowSpan="12" Grid.ColumnSpan="5"/>
         <Border BorderBrush="Gray" BorderThickness="2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="9"/>

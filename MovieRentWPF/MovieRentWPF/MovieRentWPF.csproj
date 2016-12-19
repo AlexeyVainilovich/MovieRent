@@ -60,6 +60,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\ActorViewModel.cs" />
+    <Compile Include="ViewModel\FileHandler.cs" />
     <Compile Include="ViewModel\ProducerViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\MovieViewModel.cs" />
